@@ -1,42 +1,45 @@
 const mongoose = require('mongoose');
 
-const cryptoSchema = new mongoose.Schema({
+const popularCryptoSchema = new mongoose.Schema({
     rank: {
         type: Number,
-        required: true,
     },
     name: {
         type: String,
         required: true,
     },
     price: {
-        type: Number,
+        type: String,
         required: true,
     },
     hourChange: {
-        type: Number,
+        type: String,
         required: true,
     },
     dayChange: {
-        type: Number,
+        type: String,
         required: true,
     },
     weekChange: {
-        type: Number,
+        type: String,
         required: true,
     },
     marketCap: {
-        type: Number,
+        type: String,
         required: true,
     },
     dayVolume: {
-        type: Number,
+        type: String,
         required: true,
     },
     circulatingSupply: {
-        type: Number,
+        type: String,
         required: true,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
     }
 });
 
-module.exports = mongoose.model('Crypto', cryptoSchema);
+module.exports = mongoose.model('popularCrypto', popularCryptoSchema);
